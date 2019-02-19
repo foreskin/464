@@ -52,11 +52,24 @@ public class ConcertsDB {
 			e.printStackTrace();
 		}
 		closeConnection();
-		return data;
-		
-
-	
+		return data;	
 	}
+	
+		public void InsertConcert (String Id, String MovieName, String Descrip, String Rating){
+		// Id from HTML form is a String type
+		connectMeIn();
+		String SQL = "INSERT INTO concert (id,MovieName,Description,Rating) VALUES ("+
+		Id+",'"+MovieName+"','"+Descrip+"','"+Rating+"')";
+		Statement stat;
+		try {
+			stat = conn.createStatement();
+			int rs = stat.executeUpdate(SQL); //
+		    stat.close();
+		    }
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
 	public void connectMeIn() {
 		try{
 			//Register the JDBC driver
