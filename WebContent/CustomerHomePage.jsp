@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import="lecture464.model.VenuesDB"%>
 <html>
 <head>
 <style>
@@ -16,6 +17,9 @@
 <title>HomePage</title>
 </head>
 <body>
+<%
+VenuesDB ven = new VenuesDB();
+%>
 <h1>Welcome</h1>
 <form action=Welcome.jsp>
 <button type= submit class=logout>Logout</button>
@@ -25,8 +29,9 @@
 Search <input type=text name=ConcertSearch><br>
 <input type=submit value=search>
 </form>
+Venue:
 <select>
-  <option value="visa">Avery Hall</option>
+  <option value="visa"><%= ven.getvenue(2)[1]%></option>
 </select>
 <p>EXpire Date
 </br>
