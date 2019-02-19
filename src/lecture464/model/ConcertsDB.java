@@ -27,7 +27,7 @@ public class ConcertsDB {
 		String SQL = "SELECT * from concert";
 	    Statement stat;
 	    int i=0;
-		String data[]=new String[5];
+		String data[]=new String[6];
 		try {
 			stat = conn.createStatement();
 			ResultSet rs = stat.executeQuery(SQL);
