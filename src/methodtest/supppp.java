@@ -11,8 +11,7 @@ public class supppp {
 		
 
 		System.out.println(db.getconcert(2)[3]);
-		System.out.println(db.getconcert(2)[3]);
-		
+
 
 	}
 
