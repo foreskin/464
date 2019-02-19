@@ -22,7 +22,7 @@ public class ConcertsDB {
 	static final String USER = "ydeng"; // Replace with your CSE_LOGIN
 	static final String PASS = "j87aDc";   // Replace with your CSE MySQL_PASSWORD
 	
-	public String[] getconcert (int col){
+	public String[] getconcert (int raw){
 		connectMeIn();
 		String SQL = "SELECT * from concert";
 	    Statement stat;
@@ -34,7 +34,7 @@ public class ConcertsDB {
 
 			while (rs.next()){
 			i++;
-			if(col==i){
+			if(raw==i){
 				data[0]=rs.getString(1);
 				data[1]=rs.getString(2);
 				data[2]=rs.getString(3);
